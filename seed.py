@@ -20,11 +20,10 @@ try:
     print("seeding the database...")
     # Seed teas
     db = SessionLocal()
-    # Add Teas
+
     db.add_all(teas_list)
     db.commit()
 
-    # Add comments to Teas
     db.add_all(comments_list)
     db.commit()
 

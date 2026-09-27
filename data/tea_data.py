@@ -1,8 +1,6 @@
-# data/tea_data.py
 from models.tea import TeaModel
 from models.comment import CommentModel
 
-# We create some instances of our tea model here, which will be used in seeding.
 teas_list = [
     TeaModel(name="chai", rating=4, in_stock=True),
     TeaModel(name="earl grey", rating=3, in_stock=False),

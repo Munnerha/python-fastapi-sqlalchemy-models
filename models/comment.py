@@ -1,16 +1,21 @@
-# models/comment.py
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from .base import BaseModel
 
+#  CommentsModel extends SQLAlchemy's Base class.
+#  Extending Base lets SQLAlchemy 'know' about our model, so it can use it.
+
 class CommentModel(BaseModel):
 
-    __tablename__ = "comments"  # The name of the table in the database
+    # This will be used directly to make a
+    # TABLE in Postgresql
+    __tablename__ = "comments"
 
-    # id = Column(Integer, primary_key=True, index=True)  # Unique identifier for the comment
-    content = Column(String, nullable=False)  # The text content of the comment
+    id = Column(Integer, primary_key=True, index=True)
 
-    # ForeignKey establishes a connection to the teas table
+    # Specific columns for our Comments Table.
+    content = Column(String, nullable=False)
+
+    # Associations:
     tea_id = Column(Integer, ForeignKey('teas.id'), nullable=False)
-    tea = relationship("TeaModel", back_populates="comments")  # Defines the relationship to the TeaModel
-
+    tea = relationship('TeaModel', back_populates="comments")

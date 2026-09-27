@@ -1,10 +1,9 @@
-# models/tea.py
-
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
-from .base import BaseModel  # Import the base model for SQLAlchemy
-from .comment import CommentModel  # Import the CommentModel class for establishing relationships
 
+# Associations
+from .comment import CommentModel
+from .base import BaseModel
 
 #  TeaModel extends SQLAlchemy's Base class.
 #  Extending Base lets SQLAlchemy 'know' about our model, so it can use it.
@@ -22,4 +21,4 @@ class TeaModel(BaseModel):
     in_stock = Column(Boolean)
     rating = Column(Integer)
 
-    comments = relationship("CommentModel", back_populates="tea")
+    comments = relationship('CommentModel', back_populates="tea")

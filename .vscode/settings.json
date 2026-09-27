@@ -6,5 +6,6 @@
     "scminput": false,
     "yaml": true,
     "ruby": true
-  }
+  },
+  "python-envs.defaultEnvManager": "ms-python.python:pipenv"
 }
