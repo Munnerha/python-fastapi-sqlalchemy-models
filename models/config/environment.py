@@ -1,0 +1,1 @@
+db_URI = "postgresql://Muneer:159357@localhost:5432/teas_db"
