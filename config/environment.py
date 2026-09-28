@@ -1,1 +1,4 @@
-db_URI = "postgresql://Muneer:159357@localhost:5432/teas_db"
+import os
+
+DATABASE_URL = os.getenv('DATABASE_URL')
+JWT_SECRET = os.getenv('JWT_SECRET')
